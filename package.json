@@ -1,0 +1,1 @@
+{"name":"dot-discord-kit","version":"0.1.0","description":"Agent-first setup kit for personal Dot-to-Discord onboarding","type":"module","license":"MIT","scripts":{"privacy-scan":"bun tools/privacy-scan.mjs","test":"bun test"},"repository":{"type":"git","url":"https://github.com/kihyunnn/dot-discord-kit.git"},"homepage":"https://github.com/kihyunnn/dot-discord-kit"}

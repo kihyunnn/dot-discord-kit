@@ -1,0 +1,1 @@
+{"schema":"dot-discord-kit/profile/v1","id":"local-cdp","summary":"Bridge reads approved text output from a loopback Dot browser lane.","layout":"channel_threads","access":"owner_only","result_writer":"bridge_discord","devspace":false,"cdp_scope":"loopback_only","file_results":"unsupported_until_verified"}
