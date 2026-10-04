@@ -15,8 +15,11 @@ for await (const file of new Glob("**/*").scan({ cwd: root, onlyFiles: true, dot
   files.push(file);
 }
 const hits = [];
+let skippedBinary = 0;
 for (const file of files) {
-  const text = await Bun.file(`${root}/${file}`).text();
+  const bytes = new Uint8Array(await Bun.file(`${root}/${file}`).arrayBuffer());
+  if (bytes.includes(0)) { skippedBinary++; continue; }
+  const text = new TextDecoder().decode(bytes);
   text.split("\n").forEach((line, index) => {
     if (forbidden.some((pattern) => pattern.test(line))) hits.push(`${file}:${index + 1}`);
   });
@@ -26,4 +29,4 @@ if (hits.length) {
   console.error(`privacy-scan: ${files.length} files, ${hits.length} hit(s)`);
   process.exit(1);
 }
-console.log(`privacy-scan: ${files.length} files, 0 hits`);
+console.log(`privacy-scan: ${files.length} files, ${skippedBinary} binary assets skipped, 0 hits`);

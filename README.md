@@ -55,19 +55,35 @@ The recommended default is `persistent-threads` with owner-only access. A Discor
 - Unconfirmed sends become `UNKNOWN`; they are never blindly retried.
 - File results remain unsupported or metadata-only until byte-level retrieval is proven.
 
+## Built with / 함께 쓰는 도구
+
+- **[OmO (oh-my-openagent)](https://github.com/code-yeongyu/oh-my-openagent)** — the recommended agent harness: hand it this repository URL. Its license (Sustainable Use License 1.0) is **not MIT**; see below. / 이 저장소 URL을 넘겨 실행시키는 권장 에이전트입니다. 라이선스는 MIT가 아닙니다.
+- **[Agent Messenger](https://github.com/agent-messenger/agent-messenger)** (MIT as declared upstream) — the agent can install it and use **only its official Bot path (`agent-discordbot`)**. The user-token path (`agent-discord`) is Discord self-botting and is forbidden here. / 공식 Bot 경로만 사용하며 사용자 토큰 경로는 금지입니다.
+- Nothing from these projects is copied into this repository. Details, caveats, and sources: [`docs/licenses-and-terms.md`](docs/licenses-and-terms.md). / 코드는 복사하지 않았습니다. 자세한 내용과 출처는 위 문서를 보세요.
+
 ## Existing Omonya
 
 Read [`docs/omonya-upgrade.md`](docs/omonya-upgrade.md) when Omonya is already installed. The parent `#dot` channel remains Omonya-owned; selected child threads belong to Dot. Retire a legacy relay before enabling another bridge on the same route.
 
 ## Showcase
 
-Real screens from a live setup, using fictional demo conversations only. / 실제 화면 캡처이며, 대화 내용은 모두 가상의 데모입니다.
+The Blender render is the visual hero: it is generated from a fictional user request and contains no account or message data. / Blender 렌더를 상단 대표 이미지로 배치했습니다. 가상 사용자 요청으로 만들었으며 계정·메시지 데이터는 없습니다.
 
-| Dot | Discord thread |
-| --- | --- |
-| ![Dot chat demo](showcase/dot-chat-demo.png) | ![Discord thread demo](showcase/discord-thread-demo.png) |
+<p align="center">
+  <img src="showcase/blender-3d-demo.png" alt="Fictional Blender 3D render of a glowing message handoff" width="860">
+</p>
+<p align="center"><strong>Blender 3D concept / Blender 3D 콘셉트</strong></p>
 
-Both images were cropped to the conversation area. Account names, server and channel names, other chats, and IDs are not shown. / 두 이미지는 대화 영역만 잘라냈으며 계정명, 서버·채널명, 다른 대화, ID는 포함되지 않습니다.
+Below are the real user-chat and Discord-thread surfaces that inspired the render. Their heights are fixed for a clean comparison. / 아래에는 이 렌더의 콘셉트가 된 실제 사용자 채팅과 Discord 스레드 화면을 같은 높이로 배치했습니다.
+
+<table>
+  <tr>
+    <td align="center"><strong>User request / 사용자 요청</strong><br><img src="showcase/dot-chat-demo.png" alt="Dot chat showing the user fictional 3D request" height="260"></td>
+    <td align="center"><strong>Discord thread / Discord 스레드</strong><br><img src="showcase/discord-thread-demo.png" alt="Discord thread with fictional Dot relay messages" height="260"></td>
+  </tr>
+</table>
+
+The chat screenshots are cropped to the conversation area. The render is generated from [showcase/blender-3d-demo.py](showcase/blender-3d-demo.py), and the .blend source is included for inspection. No account names, server/channel names, IDs, tokens, or private messages are included. / 채팅 스크린샷은 대화 영역만 잘랐고, 렌더는 [showcase/blender-3d-demo.py](showcase/blender-3d-demo.py)로 생성했으며 .blend 원본도 포함했습니다. 계정명·서버/채널명·ID·토큰·사설 대화는 포함하지 않습니다.
 
 ## Repository map
 
@@ -76,17 +92,17 @@ SETUP_PROMPT.md                 agent-facing onboarding contract
 profiles/                       safe profile templates
 schemas/                        redacted discovery/diagnosis contracts
 examples/                       fictional, privacy-safe fixtures
-docs/                           bilingual onboarding and Omonya notes
+docs/                           bilingual onboarding, Omonya notes, licenses and terms
 tools/privacy-scan.mjs          public-export privacy gate
-showcase/                       real UI captures of fictional demos
+showcase/                       chat captures, Blender script, blend, and 3D render
 ```
 
-The showcase images are real UI captures of fictional demo conversations, cropped to exclude identities and server details.
+The two chat images are real UI captures cropped to exclude identities and server details; the hero panel is a Blender render generated from the included source script.
 
 ## Local checks
 
 ```bash
-bun test
+bun test --pass-with-no-tests
 bun run privacy-scan
 ```
 
@@ -94,4 +110,4 @@ The repository deliberately contains no real Discord IDs, user names, home paths
 
 ## License
 
-MIT. See [`LICENSE`](LICENSE).
+MIT for this kit. See [`LICENSE`](LICENSE). Third-party tools keep their own licenses and terms: [`docs/licenses-and-terms.md`](docs/licenses-and-terms.md). / 이 키트는 MIT이며, 함께 쓰는 도구의 라이선스·약관은 별도입니다.

@@ -38,7 +38,11 @@ PHASE 4 — APPLY AND VERIFY
 - Run a harmless canary and record PASS/FAIL plus rollback instructions.
 
 HARD BOUNDARIES
-- Official Bot only. Never use a Discord user token or self-bot.
+- Official Bot only. Never use a Discord user token, QR user sign-in, session
+  extraction, or self-bot. With Agent Messenger, use only agent-discordbot.
+- Read docs/licenses-and-terms.md, summarize the Agent Messenger, OmO, Discord,
+  and OpenAI terms for the user, and do not copy third-party source into any
+  published repository.
 - Raw CDP is loopback-only. Never expose it publicly.
 - Discord threads do not create independent Dot model contexts.
 - A click without a provider receipt is UNKNOWN; do not blindly resend.
