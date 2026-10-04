@@ -61,9 +61,13 @@ Read [`docs/omonya-upgrade.md`](docs/omonya-upgrade.md) when Omonya is already i
 
 ## Showcase
 
-![Privacy-redacted Discord thread preview](showcase/discord-live-preview.svg)
+Real screens from a live setup, using fictional demo conversations only. / 실제 화면 캡처이며, 대화 내용은 모두 가상의 데모입니다.
 
-This is a deliberately sanitized illustration of the target Discord experience. A real private-server capture was reviewed and excluded because it contained server names, user identity, and internal operational messages.
+| Dot | Discord thread |
+| --- | --- |
+| ![Dot chat demo](showcase/dot-chat-demo.png) | ![Discord thread demo](showcase/discord-thread-demo.png) |
+
+Both images were cropped to the conversation area. Account names, server and channel names, other chats, and IDs are not shown. / 두 이미지는 대화 영역만 잘라냈으며 계정명, 서버·채널명, 다른 대화, ID는 포함되지 않습니다.
 
 ## Repository map
 
@@ -74,10 +78,10 @@ schemas/                        redacted discovery/diagnosis contracts
 examples/                       fictional, privacy-safe fixtures
 docs/                           bilingual onboarding and Omonya notes
 tools/privacy-scan.mjs          public-export privacy gate
-showcase/                       sanitized visual evidence
+showcase/                       real UI captures of fictional demos
 ```
 
-The showcase image is a privacy-redacted preview of the real Discord UI. It is not a transcript of a private server and contains no real message content, names, IDs, or operational data.
+The showcase images are real UI captures of fictional demo conversations, cropped to exclude identities and server details.
 
 ## Local checks
 
