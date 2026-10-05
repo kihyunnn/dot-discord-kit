@@ -31,6 +31,14 @@ Portal/OAuth/Dot login consent and verify Bot identity and permissions after I
 approve. Do not publish anything or install a service without asking me.
 ```
 
+## Demo / 데모
+
+A real, unedited-flow recording: a request typed in Discord, relayed to Dot, rendered in Blender, and returned to the Discord thread. Waiting periods are sped up; arrivals are shown in real time. Names are placeholders.
+
+실제 흐름 녹화입니다: Discord에서 요청 입력, Dot으로 전달, Blender 렌더, Discord 스레드로 결과 반환. 대기 구간만 배속이고 결과가 도착하는 순간은 실시간입니다. 이름은 임시 값입니다.
+
+[showcase/demo.mp4](showcase/demo.mp4)
+
 ## Profiles
 
 | Profile | Best for | What it does |
