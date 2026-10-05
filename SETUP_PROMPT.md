@@ -49,6 +49,10 @@ HARD BOUNDARIES
 - Default access is owner-only.
 - Do not enable DevSpace without explicit approval.
 - Keep files text-only/metadata-only until byte-level retrieval is proven.
+- When the agent can attach files, deliver each result twice: once to the Discord
+  thread and once in the agent's own conversation window, with the same files
+  attached. A summary alone is not enough; fall back to text only if attachment is
+  impossible, and say why.
 - Do not publish, commit, or send messages externally unless the user explicitly
   asks for that final action.
 ```
