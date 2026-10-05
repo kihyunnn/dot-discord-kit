@@ -4,6 +4,24 @@
 
 **코딩 에이전트에게 이 GitHub 링크를 주세요. 에이전트가 환경을 조사하고, 가장 맞는 Dot-to-Discord 프로필을 추천하고, 변경 전에 물어본 뒤, 설정과 검증을 진행합니다.**
 
+## Why this exists
+
+I built this because **OmO냥 (Omonya)** — my Discord-based agent front on top of OmO — turned out to be so convenient that I wanted every other agent I use to work the same way: send a message from Discord on my phone, let the agent do the work on my own machine, and get the result back in the same thread. Dot was the first agent people asked me about, so it is the first connector I'm publishing.
+
+The harness underneath is **[OmO (oh-my-openagent)](https://github.com/code-yeongyu/oh-my-openagent)** by Yeongyu Kim (연규킴, [code-yeongyu](https://github.com/code-yeongyu)). Thanks to that project for making this style of agent workflow possible. This repository copies no code from it; see [`docs/licenses-and-terms.md`](docs/licenses-and-terms.md).
+
+## Roadmap: everything to Discord
+
+Only the **Dot** connector is published and supported today. The same idea — Discord thread in, agent work on your own machine, result back in the thread — is planned for more agents, one connector at a time:
+
+- Pi
+- OmO
+- Codex
+- Claude Code
+- Muse AI (muse.ai)
+
+These are plans, not features: none of them ships here yet. Each one will use only that tool's official input path and the same safety model below.
+
 ## What this repository is
 
 Dot Discord Kit is an agent-first onboarding kit. It is intentionally not a hosted service and it does not silently install software, read browser credentials, or assume a particular server layout.
@@ -33,11 +51,14 @@ approve. Do not publish anything or install a service without asking me.
 
 ## Demo / 데모
 
-A real, unedited-flow recording: a request typed in Discord, relayed to Dot, rendered in Blender, and returned to the Discord thread. Waiting periods are sped up; arrivals are shown in real time. Names are placeholders.
+A real recording: a request typed in Discord, relayed to Dot, modeled and rendered in Blender, and returned to the Discord thread. Waiting periods are sped up; arrivals are shown as they happen. Names are placeholders.
 
-실제 흐름 녹화입니다: Discord에서 요청 입력, Dot으로 전달, Blender 렌더, Discord 스레드로 결과 반환. 대기 구간만 배속이고 결과가 도착하는 순간은 실시간입니다. 이름은 임시 값입니다.
+실제 흐름 녹화입니다: Discord에서 요청 입력, Dot으로 전달, Blender 모델링·렌더, Discord 스레드로 결과 반환. 대기 구간만 배속이고 결과가 도착하는 순간은 그대로입니다. 이름은 임시 값입니다.
 
-[showcase/demo.mp4](showcase/demo.mp4)
+<p align="center">
+  <img src="showcase/demo.gif" alt="Discord request, Dot working, and the Blender result returning to the thread" width="860">
+</p>
+<p align="center"><a href="showcase/demo.mp4">Full-quality video (mp4) / 고화질 영상</a></p>
 
 ## Profiles
 
@@ -75,23 +96,20 @@ Read [`docs/omonya-upgrade.md`](docs/omonya-upgrade.md) when Omonya is already i
 
 ## Showcase
 
-The Blender render is the visual hero: it is generated from a fictional user request and contains no account or message data. / Blender 렌더를 상단 대표 이미지로 배치했습니다. 가상 사용자 요청으로 만들었으며 계정·메시지 데이터는 없습니다.
+The request below asked Dot to model a house with a garden in Blender and return a best-view photo, a turntable video, and the .blend file. The picture is the real result Dot posted. / 아래 요청은 Dot에게 Blender로 정원 있는 목조주택을 모델링해 베스트 뷰 사진, 턴테이블 영상, .blend 파일로 돌려달라고 한 것이고, 사진은 Dot이 실제로 올린 결과입니다.
 
 <p align="center">
-  <img src="showcase/blender-3d-demo.png" alt="Fictional Blender 3D render of a glowing message handoff" width="860">
+  <img src="showcase/hero-garden-house.png" alt="Garden wood house rendered by Dot in Blender" width="860">
 </p>
-<p align="center"><strong>Blender 3D concept / Blender 3D 콘셉트</strong></p>
-
-Below are the real user-chat and Discord-thread surfaces that inspired the render. Their heights are fixed for a clean comparison. / 아래에는 이 렌더의 콘셉트가 된 실제 사용자 채팅과 Discord 스레드 화면을 같은 높이로 배치했습니다.
 
 <table>
   <tr>
-    <td align="center"><strong>User request / 사용자 요청</strong><br><img src="showcase/dot-chat-demo.png" alt="Dot chat showing the user fictional 3D request" height="260"></td>
-    <td align="center"><strong>Discord thread / Discord 스레드</strong><br><img src="showcase/discord-thread-demo.png" alt="Discord thread with fictional Dot relay messages" height="260"></td>
+    <td align="center"><strong>Discord thread / Discord 스레드</strong><br><img src="showcase/discord-thread-demo.png" alt="Discord thread with the request and Dot's result" height="300"></td>
+    <td align="center"><strong>Dot chat / Dot 대화</strong><br><img src="showcase/dot-chat-demo.png" alt="Dot working on the request" height="300"></td>
   </tr>
 </table>
 
-The chat screenshots are cropped to the conversation area. The render is generated from [showcase/blender-3d-demo.py](showcase/blender-3d-demo.py), and the .blend source is included for inspection. No account names, server/channel names, IDs, tokens, or private messages are included. / 채팅 스크린샷은 대화 영역만 잘랐고, 렌더는 [showcase/blender-3d-demo.py](showcase/blender-3d-demo.py)로 생성했으며 .blend 원본도 포함했습니다. 계정명·서버/채널명·ID·토큰·사설 대화는 포함하지 않습니다.
+The captures use placeholder names (Demo User / Dot Bot). Server and channel names, IDs, tokens, and earlier chat history are cropped out or covered. / 캡처는 임시 이름(Demo User / Dot Bot)을 쓰며, 서버·채널 이름, ID, 토큰, 이전 대화는 잘라내거나 가렸습니다.
 
 ## Repository map
 
@@ -102,10 +120,9 @@ schemas/                        redacted discovery/diagnosis contracts
 examples/                       fictional, privacy-safe fixtures
 docs/                           bilingual onboarding, Omonya notes, licenses and terms
 tools/privacy-scan.mjs          public-export privacy gate
-showcase/                       chat captures, Blender script, blend, and 3D render
+showcase/                       demo video and preview, result image, chat captures
 ```
 
-The two chat images are real UI captures cropped to exclude identities and server details; the hero panel is a Blender render generated from the included source script.
 
 ## Local checks
 
