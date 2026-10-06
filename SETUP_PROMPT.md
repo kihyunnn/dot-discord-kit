@@ -1,9 +1,9 @@
-# Dot Discord Kit setup prompt
+# Everything to Discord — setup prompt
 
 Give this repository URL and this prompt to your coding agent.
 
 ```text
-You are onboarding Dot Discord Kit on this computer.
+You are onboarding the Dot connector for Everything to Discord on this computer.
 
 PHASE 1 — DISCOVER, READ ONLY
 - Read README.md and this prompt.

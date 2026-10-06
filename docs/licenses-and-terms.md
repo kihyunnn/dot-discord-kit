@@ -6,7 +6,7 @@ Checked on 2026-10-04 against the upstream sources linked below. This is a good-
 
 ## 1. This kit / 이 키트
 
-- Dot Discord Kit is **MIT** licensed (see [`LICENSE`](../LICENSE)).
+- Everything to Discord is **MIT** licensed (see [`LICENSE`](../LICENSE)).
 - It contains **no code copied from** Agent Messenger, OmO, Omonya, Discord, or OpenAI. It is documentation, profile templates, schemas, and fictional examples. It links to those projects and tells your agent how to use them; it does not redistribute them.
 - 이 키트는 **MIT** 라이선스입니다. Agent Messenger, OmO, Omonya, Discord, OpenAI의 코드는 복사하지 않았고, 문서·프로필 템플릿·스키마·가상 예제만 담고 있습니다. 해당 프로젝트는 링크로만 안내하며 재배포하지 않습니다.
 

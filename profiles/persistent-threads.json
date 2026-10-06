@@ -1,1 +1,1 @@
-{"schema":"dot-discord-kit/profile/v1","id":"persistent-threads","summary":"One Discord thread per ongoing topic.","layout":"channel_threads","thread_policy":"persistent","access":"owner_only","result_writer":"bridge_discord","devspace":false,"file_results":"text_only"}
+{"schema":"everything-to-discord/profile/v1","id":"persistent-threads","summary":"One Discord thread per ongoing topic.","layout":"channel_threads","thread_policy":"persistent","access":"owner_only","result_writer":"bridge_discord","devspace":false,"file_results":"text_only"}

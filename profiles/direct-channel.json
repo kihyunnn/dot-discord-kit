@@ -1,1 +1,1 @@
-{"schema":"dot-discord-kit/profile/v1","id":"direct-channel","summary":"One dedicated Discord channel for simple Dot conversations.","layout":"channel","access":"owner_only","result_writer":"bridge_discord","devspace":false,"file_results":"text_only"}
+{"schema":"everything-to-discord/profile/v1","id":"direct-channel","summary":"One dedicated Discord channel for simple Dot conversations.","layout":"channel","access":"owner_only","result_writer":"bridge_discord","devspace":false,"file_results":"text_only"}
