@@ -36,6 +36,8 @@ GitHub link
   -> smoke test + rollback instructions
 ```
 
+After onboarding you get one Discord channel or thread per topic. You send a message from your phone; your agent works on your own machine; the result — text, image, video, or file — lands back in the same thread, and the agent keeps its own copy in its conversation window. / 온보딩이 끝나면 주제마다 Discord 채널 또는 스레드 하나가 생깁니다. 폰에서 메시지를 보내면 내 컴퓨터에서 에이전트가 작업하고, 결과(텍스트·이미지·영상·파일)가 같은 스레드로 돌아오며 에이전트 대화창에도 같은 사본이 남습니다.
+
 ## Quick start
 
 Give your coding agent this repository URL and say:
@@ -82,7 +84,8 @@ The recommended default is `persistent-threads` with owner-only access. A Discor
 - DevSpace is optional and owner-only unless the connector enforces real scope.
 - One route has one result writer: bridge-owned Discord publishing or Dot/DevSpace publishing.
 - Unconfirmed sends become `UNKNOWN`; they are never blindly retried.
-- File results remain unsupported or metadata-only until byte-level retrieval is proven.
+- File results (images, video, .blend, and similar) are returned as real attachments when the connector can retrieve them; if retrieval is impossible the result is reported as text with the reason stated.
+- Every result is delivered twice: to the Discord thread and to the agent's own conversation window, with the same files attached. / 결과 파일은 커넥터가 회수할 수 있으면 실제 첨부로 돌아오고, 불가능하면 이유와 함께 텍스트로 보고합니다. 모든 결과는 Discord 스레드와 에이전트 대화창 두 곳에 같은 파일로 전달됩니다.
 
 ## Built with / 함께 쓰는 도구
 
